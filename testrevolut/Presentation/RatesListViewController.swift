@@ -33,6 +33,7 @@ final class RatesListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Rates"
         setupUI()
         ratesListViewModel = RatesListViewModel()
         startUpdatingRates()

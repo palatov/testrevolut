@@ -27,7 +27,7 @@ final class RateTableViewCell: UITableViewCell {
     var inputHandler: ((Double) -> Void)?
     
     private var rateObservation: NSKeyValueObservation?
-    private var ammountObsevation: NSKeyValueObservation?
+    private var baseAmmountObservation: NSKeyValueObservation?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,13 +40,14 @@ final class RateTableViewCell: UITableViewCell {
         currency = nil
         inputHandler = nil
         rateObservation = nil
-        ammountObsevation = nil
+        baseAmmountObservation = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         textField.isUserInteractionEnabled = selected
     }
+    
     
     // MARK: - Private methods
     
@@ -61,7 +62,7 @@ final class RateTableViewCell: UITableViewCell {
             self.updateTextFieldWithAnimation()
         })
         
-        ammountObsevation = currency?.observe((\.baseAmmount), changeHandler: { [weak self] (_, _) in
+        baseAmmountObservation = currency?.observe((\.baseAmmount), changeHandler: { [weak self] (_, _) in
             guard let self = self, !self.isSelected else { return }
             self.updateTextFieldWithAnimation()
         })
@@ -73,7 +74,7 @@ final class RateTableViewCell: UITableViewCell {
             UIView.transition(
                 with: self.textField,
                 duration: 0.2,
-                options: .transitionCrossDissolve,
+                options: .curveEaseIn,
                 animations: { self.updateTextField() },
                 completion: nil)
         }
