@@ -1,5 +1,5 @@
 //
-//  CurrencyViewModel.swift
+//  RateViewModel.swift
 //  testrevolut
 //
 //  Created by Nikita Timonin on 14/10/2018.
@@ -9,21 +9,27 @@
 import Foundation
 
 
-@objcMembers class CurrencyViewModel: NSObject {
+@objcMembers class RateViewModel: NSObject {
     let name: String
     dynamic var rate: Double
-    dynamic var ammount: Double
+    dynamic var baseAmmount: Double
+    
+    var totalAmmount: Double {
+        return rate * baseAmmount
+    }
     
     init(name: String, rate: Double, ammount: Double) {
         self.name = name
         self.rate = rate
-        self.ammount = ammount
+        self.baseAmmount = ammount
     }
     
-    static var defaultCurrency: CurrencyViewModel {
-        return CurrencyViewModel(
+    static var defaultRate: RateViewModel {
+        return RateViewModel(
             name: "EUR",
             rate: 1.0,
             ammount: 100)
     }
+    
+    
 }

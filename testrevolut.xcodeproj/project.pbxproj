@@ -11,16 +11,19 @@
 		7478B7E3217205F800724F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7478B7E1217205F800724F43 /* Main.storyboard */; };
 		7478B7E5217205FD00724F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7478B7E4217205FD00724F43 /* Assets.xcassets */; };
 		7478B7E8217205FD00724F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7478B7E6217205FD00724F43 /* LaunchScreen.storyboard */; };
-		7478B7F3217205FD00724F43 /* testrevolutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B7F2217205FD00724F43 /* testrevolutTests.swift */; };
 		7478B7FE217205FD00724F43 /* testrevolutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B7FD217205FD00724F43 /* testrevolutUITests.swift */; };
-		7478B80D2172282400724F43 /* RateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B80C2172282400724F43 /* RateService.swift */; };
-		7478B80F217228DD00724F43 /* CurrencyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B80E217228DD00724F43 /* CurrencyListViewController.swift */; };
-		7478B8142172299F00724F43 /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B8122172299F00724F43 /* CurrencyTableViewCell.swift */; };
-		7478B8152172299F00724F43 /* CurrencyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7478B8132172299F00724F43 /* CurrencyTableViewCell.xib */; };
+		7478B80D2172282400724F43 /* RatesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B80C2172282400724F43 /* RatesService.swift */; };
+		7478B80F217228DD00724F43 /* RatesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B80E217228DD00724F43 /* RatesListViewController.swift */; };
+		7478B8142172299F00724F43 /* RateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B8122172299F00724F43 /* RateTableViewCell.swift */; };
+		7478B8152172299F00724F43 /* RateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7478B8132172299F00724F43 /* RateTableViewCell.xib */; };
 		7478B817217373C900724F43 /* ActionRestrictableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B816217373C900724F43 /* ActionRestrictableTextField.swift */; };
-		7478B81A2173741B00724F43 /* CurrencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B8192173741B00724F43 /* CurrencyList.swift */; };
-		7478B81D2173843C00724F43 /* CurrencyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B81C2173843C00724F43 /* CurrencyListViewModel.swift */; };
-		7478B81F217384A100724F43 /* CurrencyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B81E217384A100724F43 /* CurrencyViewModel.swift */; };
+		7478B81A2173741B00724F43 /* RatesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B8192173741B00724F43 /* RatesList.swift */; };
+		7478B81D2173843C00724F43 /* RatesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7478B81C2173843C00724F43 /* RatesListViewModel.swift */; };
+		7496CC2C21753C1B008E7FB5 /* RatesServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7496CC2B21753C1A008E7FB5 /* RatesServiceMock.swift */; };
+		7496CC2E21753E77008E7FB5 /* RatesListsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7496CC2D21753E77008E7FB5 /* RatesListsViewModelTests.swift */; };
+		7496CC3021754550008E7FB5 /* RatesServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7496CC2F21754550008E7FB5 /* RatesServiceTests.swift */; };
+		7496CC3221754808008E7FB5 /* CurrencyViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7496CC3121754808008E7FB5 /* CurrencyViewModelTests.swift */; };
+		74F4221221754AC0001E65AA /* RateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F4221121754AC0001E65AA /* RateViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,19 +51,22 @@
 		7478B7E7217205FD00724F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7478B7E9217205FD00724F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7478B7EE217205FD00724F43 /* testrevolutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testrevolutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7478B7F2217205FD00724F43 /* testrevolutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testrevolutTests.swift; sourceTree = "<group>"; };
 		7478B7F4217205FD00724F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7478B7F9217205FD00724F43 /* testrevolutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = testrevolutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7478B7FD217205FD00724F43 /* testrevolutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testrevolutUITests.swift; sourceTree = "<group>"; };
 		7478B7FF217205FD00724F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7478B80C2172282400724F43 /* RateService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateService.swift; sourceTree = "<group>"; };
-		7478B80E217228DD00724F43 /* CurrencyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewController.swift; sourceTree = "<group>"; };
-		7478B8122172299F00724F43 /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
-		7478B8132172299F00724F43 /* CurrencyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CurrencyTableViewCell.xib; sourceTree = "<group>"; };
+		7478B80C2172282400724F43 /* RatesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesService.swift; sourceTree = "<group>"; };
+		7478B80E217228DD00724F43 /* RatesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesListViewController.swift; sourceTree = "<group>"; };
+		7478B8122172299F00724F43 /* RateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateTableViewCell.swift; sourceTree = "<group>"; };
+		7478B8132172299F00724F43 /* RateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RateTableViewCell.xib; sourceTree = "<group>"; };
 		7478B816217373C900724F43 /* ActionRestrictableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRestrictableTextField.swift; sourceTree = "<group>"; };
-		7478B8192173741B00724F43 /* CurrencyList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyList.swift; sourceTree = "<group>"; };
-		7478B81C2173843C00724F43 /* CurrencyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyListViewModel.swift; sourceTree = "<group>"; };
-		7478B81E217384A100724F43 /* CurrencyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModel.swift; sourceTree = "<group>"; };
+		7478B8192173741B00724F43 /* RatesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesList.swift; sourceTree = "<group>"; };
+		7478B81C2173843C00724F43 /* RatesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesListViewModel.swift; sourceTree = "<group>"; };
+		7496CC2B21753C1A008E7FB5 /* RatesServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceMock.swift; sourceTree = "<group>"; };
+		7496CC2D21753E77008E7FB5 /* RatesListsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesListsViewModelTests.swift; sourceTree = "<group>"; };
+		7496CC2F21754550008E7FB5 /* RatesServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatesServiceTests.swift; sourceTree = "<group>"; };
+		7496CC3121754808008E7FB5 /* CurrencyViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewModelTests.swift; sourceTree = "<group>"; };
+		74F4221121754AC0001E65AA /* RateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +131,11 @@
 		7478B7F1217205FD00724F43 /* testrevolutTests */ = {
 			isa = PBXGroup;
 			children = (
-				7478B7F2217205FD00724F43 /* testrevolutTests.swift */,
+				7496CC2A21753BF9008E7FB5 /* Mock */,
 				7478B7F4217205FD00724F43 /* Info.plist */,
+				7496CC2D21753E77008E7FB5 /* RatesListsViewModelTests.swift */,
+				7496CC2F21754550008E7FB5 /* RatesServiceTests.swift */,
+				7496CC3121754808008E7FB5 /* CurrencyViewModelTests.swift */,
 			);
 			path = testrevolutTests;
 			sourceTree = "<group>";
@@ -144,7 +153,7 @@
 			isa = PBXGroup;
 			children = (
 				7478B8182173740100724F43 /* Model */,
-				7478B80C2172282400724F43 /* RateService.swift */,
+				7478B80C2172282400724F43 /* RatesService.swift */,
 			);
 			path = "Business Logic";
 			sourceTree = "<group>";
@@ -154,7 +163,7 @@
 			children = (
 				7478B81B2173842300724F43 /* Model */,
 				7478B8112172297F00724F43 /* Cell */,
-				7478B80E217228DD00724F43 /* CurrencyListViewController.swift */,
+				7478B80E217228DD00724F43 /* RatesListViewController.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -162,8 +171,8 @@
 		7478B8112172297F00724F43 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				7478B8122172299F00724F43 /* CurrencyTableViewCell.swift */,
-				7478B8132172299F00724F43 /* CurrencyTableViewCell.xib */,
+				7478B8122172299F00724F43 /* RateTableViewCell.swift */,
+				7478B8132172299F00724F43 /* RateTableViewCell.xib */,
 				7478B816217373C900724F43 /* ActionRestrictableTextField.swift */,
 			);
 			path = Cell;
@@ -172,7 +181,7 @@
 		7478B8182173740100724F43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7478B8192173741B00724F43 /* CurrencyList.swift */,
+				7478B8192173741B00724F43 /* RatesList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,10 +189,18 @@
 		7478B81B2173842300724F43 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7478B81C2173843C00724F43 /* CurrencyListViewModel.swift */,
-				7478B81E217384A100724F43 /* CurrencyViewModel.swift */,
+				74F4221121754AC0001E65AA /* RateViewModel.swift */,
+				7478B81C2173843C00724F43 /* RatesListViewModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7496CC2A21753BF9008E7FB5 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				7496CC2B21753C1A008E7FB5 /* RatesServiceMock.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,7 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7478B8152172299F00724F43 /* CurrencyTableViewCell.xib in Resources */,
+				7478B8152172299F00724F43 /* RateTableViewCell.xib in Resources */,
 				7478B7E8217205FD00724F43 /* LaunchScreen.storyboard in Resources */,
 				7478B7E5217205FD00724F43 /* Assets.xcassets in Resources */,
 				7478B7E3217205F800724F43 /* Main.storyboard in Resources */,
@@ -318,14 +335,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7478B81A2173741B00724F43 /* CurrencyList.swift in Sources */,
-				7478B81F217384A100724F43 /* CurrencyViewModel.swift in Sources */,
-				7478B8142172299F00724F43 /* CurrencyTableViewCell.swift in Sources */,
+				7478B81A2173741B00724F43 /* RatesList.swift in Sources */,
+				7478B8142172299F00724F43 /* RateTableViewCell.swift in Sources */,
 				7478B7DE217205F800724F43 /* AppDelegate.swift in Sources */,
-				7478B80F217228DD00724F43 /* CurrencyListViewController.swift in Sources */,
-				7478B80D2172282400724F43 /* RateService.swift in Sources */,
+				7478B80F217228DD00724F43 /* RatesListViewController.swift in Sources */,
+				7478B80D2172282400724F43 /* RatesService.swift in Sources */,
 				7478B817217373C900724F43 /* ActionRestrictableTextField.swift in Sources */,
-				7478B81D2173843C00724F43 /* CurrencyListViewModel.swift in Sources */,
+				74F4221221754AC0001E65AA /* RateViewModel.swift in Sources */,
+				7478B81D2173843C00724F43 /* RatesListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +350,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7478B7F3217205FD00724F43 /* testrevolutTests.swift in Sources */,
+				7496CC3021754550008E7FB5 /* RatesServiceTests.swift in Sources */,
+				7496CC2C21753C1B008E7FB5 /* RatesServiceMock.swift in Sources */,
+				7496CC2E21753E77008E7FB5 /* RatesListsViewModelTests.swift in Sources */,
+				7496CC3221754808008E7FB5 /* CurrencyViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

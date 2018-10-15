@@ -1,5 +1,5 @@
 //
-//  CurrencyTableViewCell.swift
+//  RateTableViewCell.swift
 //  testrevolut
 //
 //  Created by Nikita Timonin on 13/10/2018.
@@ -9,14 +9,14 @@
 import UIKit
 
 
-final class CurrencyTableViewCell: UITableViewCell {
+final class RateTableViewCell: UITableViewCell {
     
-    static let reusableIdentifier = "CurrencyTableViewCell"
+    static let reusableIdentifier = "RateTableViewCell"
     
     @IBOutlet weak var currencyName: UILabel!
     @IBOutlet weak var textField: UITextField!
     
-    var currency: CurrencyViewModel? {
+    var currency: RateViewModel? {
         didSet {
             currencyName.text = currency?.name
             updateTextField()
@@ -28,7 +28,6 @@ final class CurrencyTableViewCell: UITableViewCell {
     
     private var rateObservation: NSKeyValueObservation?
     private var ammountObsevation: NSKeyValueObservation?
-    private var isBaseObservation: NSKeyValueObservation?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -42,7 +41,6 @@ final class CurrencyTableViewCell: UITableViewCell {
         inputHandler = nil
         rateObservation = nil
         ammountObsevation = nil
-        isBaseObservation = nil 
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,15 +56,15 @@ final class CurrencyTableViewCell: UITableViewCell {
     }
     
     private func setupBindings() {
-        rateObservation = currency?.observe(\.rate) { [weak self] (viewModel, change) in
+        rateObservation = currency?.observe((\.rate), changeHandler: { [weak self] (_, _) in
             guard let self = self, !self.isSelected else { return }
             self.updateTextFieldWithAnimation()
-        }
+        })
         
-        ammountObsevation = currency?.observe(\.ammount) { [weak self] (viewModel, change) in
+        ammountObsevation = currency?.observe((\.baseAmmount), changeHandler: { [weak self] (_, _) in
             guard let self = self, !self.isSelected else { return }
             self.updateTextFieldWithAnimation()
-        }
+        })
     }
     
     private func updateTextFieldWithAnimation() {
@@ -83,10 +81,7 @@ final class CurrencyTableViewCell: UITableViewCell {
     
     private func updateTextField() {
         guard let currency = currency else { return }
-        let rate = currency.rate
-        let ammount = Double(currency.ammount)
-        let total = rate * ammount
-        textField.text = String(format: "%.2f", total)
+        textField.text = String(format: "%.2f", currency.totalAmmount)
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  CurrencyList.swift
+//  RatesList.swift
 //  testrevolut
 //
 //  Created by Nikita Timonin on 14/10/2018.
@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct CurrencyList: Decodable{
+struct RatesList: Decodable{
     let base: String
     let date: String
     let rates: [String: Double]

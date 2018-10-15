@@ -1,5 +1,5 @@
 //
-//  RateService.swift
+//  RatesService.swift
 //  testrevolut
 //
 //  Created by Nikita Timonin on 13/10/2018.
@@ -9,14 +9,16 @@
 import Foundation
 
 
-protocol RateServiceDelegate: class {
+protocol RatesService {
     
-    func rateServiceDidRecieveUpdate(base: String, rates: [String : Double])
+     func obtainRates(base: String, completion: @escaping ((RatesList) -> Void))
     
 }
 
 
-final class RateService {
+final class RatesServiceImpl: RatesService {
+    
+    // MARK: - Types
     
     typealias VoidClosure = (() -> Void)
     
@@ -24,34 +26,42 @@ final class RateService {
         static let baseURL = "https://revolut.duckdns.org/latest"
     }
     
+    
+    // MARK: - Private properties
+    
     private let session = URLSession(configuration: .default)
     
-    weak var delegate: RateServiceDelegate?
     
-    func obtainCurrencies(baseCurrency: String) {
-        guard let request = createRequest(baseCurrency: baseCurrency) else { return }
+    // MARK: - Public methods
+    
+    func obtainRates(base: String, completion: @escaping ((RatesList) -> Void)) {
+        guard let request = createRequest(base: base) else { return }
         let task = session.dataTask(with: request) { [weak self] (data, response, error) in
             guard let self = self, let data = data else { return }
             let currencyList = self.process(data: data)
             DispatchQueue.main.async {
-                self.delegate?.rateServiceDidRecieveUpdate(base: currencyList.base, rates: currencyList.rates)
+                completion(currencyList)
             }
         }
         task.resume()
     }
     
-    private func process(data: Data) -> CurrencyList {
-        return try! JSONDecoder().decode(CurrencyList.self, from: data)
+    
+    // MARK: - Private methods
+    
+    private func process(data: Data) -> RatesList {
+        return try! JSONDecoder().decode(RatesList.self, from: data)
     }
     
-    private func createRequest(baseCurrency: String) -> URLRequest? {
+    private func createRequest(base: String) -> URLRequest? {
         guard var urlComponents = URLComponents(string: Constants.baseURL) else { return nil }
         urlComponents.queryItems = [
-            URLQueryItem(name: "base", value: baseCurrency)
+            URLQueryItem(name: "base", value: base)
         ]
         guard let url = urlComponents.url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         return request
     }
+    
 }
