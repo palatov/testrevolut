@@ -13,7 +13,7 @@ import XCTest
 final class RatesListsViewModelTests: XCTestCase {
     
     func testObtainRatesEqualCounts() {
-        let viewModel = RatesListViewModel(rateService: RatesServiceMock())
+        let viewModel = RatesListViewModel(ratesService: RatesServiceMock())
         viewModel.obtainRates(completion: nil)
         
         // Total rates + base
@@ -22,14 +22,14 @@ final class RatesListsViewModelTests: XCTestCase {
     }
     
     func testObtainRatesUpdatedBaseRate() {
-        let viewModel = RatesListViewModel(rateService: RatesServiceMock())
+        let viewModel = RatesListViewModel(ratesService: RatesServiceMock())
         viewModel.obtainRates(completion: nil)
         
         XCTAssertEqual(viewModel.baseRate.rate, RatesListViewModel.Constants.baseCurrencyRate)
     }
     
     func testUpdateBaseAmmount() {
-        let viewModel = RatesListViewModel(rateService: RatesServiceMock())
+        let viewModel = RatesListViewModel(ratesService: RatesServiceMock())
         viewModel.obtainRates(completion: nil)
         let newAmmount = 100.0
         viewModel.updateBaseAmmount(newAmmount: newAmmount)

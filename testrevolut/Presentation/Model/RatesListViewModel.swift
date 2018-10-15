@@ -34,13 +34,13 @@ final class RatesListViewModel {
     
     private(set) var rates = [RateViewModel]()
     private var baseRateWasUpdated = false
-    private let rateService: RatesService
+    private let ratesService: RatesService
     
     
     // MARK: - Init
     
-    init(rateService: RatesService = RatesServiceImpl()) {
-        self.rateService = rateService
+    init(ratesService: RatesService = RatesServiceImpl()) {
+        self.ratesService = ratesService
     }
     
     
@@ -53,7 +53,7 @@ final class RatesListViewModel {
     }
     
     func obtainRates(completion: VoidClosure?) {
-        rateService.obtainRates(base: baseRate.name) { [weak self] (ratesList) in
+        ratesService.obtainRates(base: baseRate.name) { [weak self] (ratesList) in
             guard let self = self else { return }
             self.updateBaseRate(name: ratesList.base)
             ratesList.rates.forEach { (name,rate) in
