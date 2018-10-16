@@ -39,7 +39,21 @@ final class RatesListViewController: UIViewController {
         startUpdatingRates()
     }
     
-   
+    
+    // MARK: - UIScrollViewDelegate
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(false)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.contentOffset.y == 0 {
+            let cell = tableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! RateTableViewCell
+            cell.textField.becomeFirstResponder()
+        }
+    }
+    
+    
     // MARK: - Private methods
     
     private func startUpdatingRates() {
@@ -70,7 +84,7 @@ final class RatesListViewController: UIViewController {
         tableView.delegate = self
     }
     
-    
+   
     // MARK: - Deinit
     
     deinit {
@@ -108,16 +122,18 @@ extension RatesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! RateTableViewCell
-        cell.textField.becomeFirstResponder()
-        
+      
         guard let currency = cell.currency else { return }
         ratesListViewModel.baseRate = currency
         
         let zeroIndexPath = IndexPath(row: 0, section: 0)
-        tableView.beginUpdates()
         tableView.moveRow(at: indexPath, to: zeroIndexPath)
-        tableView.scrollToRow(at: zeroIndexPath, at: .top, animated: true)
-        tableView.endUpdates()
+        
+        if let topIsVisible = tableView.indexPathsForVisibleRows?.contains(zeroIndexPath), topIsVisible {
+            cell.textField.becomeFirstResponder()
+        } else {
+            tableView.scrollToRow(at: zeroIndexPath, at: .top, animated: true)
+        }
     }
     
 }
