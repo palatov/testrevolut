@@ -63,6 +63,7 @@ final class RatesListViewController: UIViewController {
             selector: #selector(updateRates),
             userInfo: nil,
             repeats: true)
+        RunLoop.current.add(timer, forMode: .common)
         timer.fire()
     }
     
