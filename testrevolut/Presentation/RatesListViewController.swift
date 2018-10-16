@@ -108,7 +108,7 @@ extension RatesListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: RateTableViewCell.reusableIdentifier,
             for: indexPath) as! RateTableViewCell
-        cell.currency = ratesListViewModel?.rates[indexPath.row]
+        cell.rate = ratesListViewModel?.rates[indexPath.row]
         cell.inputHandler = { [weak self] (input) in
             self?.ratesListViewModel.updateBaseAmmount(newAmmount: input)
         }
@@ -123,7 +123,7 @@ extension RatesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! RateTableViewCell
       
-        guard let currency = cell.currency else { return }
+        guard let currency = cell.rate else { return }
         ratesListViewModel.baseRate = currency
         
         let zeroIndexPath = IndexPath(row: 0, section: 0)

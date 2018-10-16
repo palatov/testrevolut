@@ -16,9 +16,9 @@ final class RateTableViewCell: UITableViewCell {
     @IBOutlet weak var currencyName: UILabel!
     @IBOutlet weak var textField: UITextField!
     
-    var currency: RateViewModel? {
+    var rate: RateViewModel? {
         didSet {
-            currencyName.text = currency?.name
+            currencyName.text = rate?.name
             updateTextField()
             setupBindings()
         }
@@ -37,7 +37,7 @@ final class RateTableViewCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        currency = nil
+        rate = nil
         inputHandler = nil
         rateObservation = nil
         baseAmmountObservation = nil
@@ -57,12 +57,12 @@ final class RateTableViewCell: UITableViewCell {
     }
     
     private func setupBindings() {
-        rateObservation = currency?.observe((\.rate), changeHandler: { [weak self] (_, _) in
+        rateObservation = rate?.observe((\.rate), changeHandler: { [weak self] (_, _) in
             guard let self = self, !self.isSelected else { return }
             self.updateTextFieldWithAnimation()
         })
         
-        baseAmmountObservation = currency?.observe((\.baseAmmount), changeHandler: { [weak self] (_, _) in
+        baseAmmountObservation = rate?.observe((\.baseAmmount), changeHandler: { [weak self] (_, _) in
             guard let self = self, !self.isSelected else { return }
             self.updateTextFieldWithAnimation()
         })
@@ -81,7 +81,7 @@ final class RateTableViewCell: UITableViewCell {
     }
     
     private func updateTextField() {
-        guard let currency = currency else { return }
+        guard let currency = rate else { return }
         textField.text = String(format: "%.2f", currency.totalAmmount)
     }
     
